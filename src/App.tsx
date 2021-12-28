@@ -5,6 +5,7 @@ import Location from './components/Location';
 import Date from './components/Date';
 import CurrentWeather from './components/CurrentWeather';
 import CurrentWeatherStats from './components/CurrentWeatherStats';
+import WeatherByHour from './components/WeatherByHour';
 
 const App = () => {
     return (
@@ -16,6 +17,14 @@ const App = () => {
             <div>
                 <CurrentWeather />
                 <CurrentWeatherStats />
+            </div>
+            <div>
+                <WeatherByHour
+                    time="9am"
+                    icon="day-sunny"
+                    temperature={18}
+                    measurement="C"
+                />
             </div>
         </div>
     );
