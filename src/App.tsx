@@ -19,12 +19,7 @@ const App = () => {
                 <CurrentWeatherStats />
             </div>
             <div>
-                <WeatherByHour
-                    time="9am"
-                    icon="day-sunny"
-                    temperature={18}
-                    measurement="C"
-                />
+                <WeatherByHour />
             </div>
         </div>
     );
