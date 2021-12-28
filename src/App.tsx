@@ -4,6 +4,7 @@ import React from 'react';
 import Location from './components/Location';
 import Date from './components/Date';
 import CurrentWeather from './components/CurrentWeather';
+import CurrentWeatherStats from './components/CurrentWeatherStats';
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
             </div>
             <div>
                 <CurrentWeather />
+                <CurrentWeatherStats />
             </div>
         </div>
     );
