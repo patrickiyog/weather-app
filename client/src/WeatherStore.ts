@@ -10,7 +10,6 @@ interface WeatherState {
 
 export const weatherStore = create<WeatherState>(set => ({
     weather: {
-        id: '',
         country: '',
         city: '',
         main: '',
