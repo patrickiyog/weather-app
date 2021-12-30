@@ -15,12 +15,12 @@ const CurrentWeatherStats = () => {
             </div>
             <div>
                 <div>
-                    <div>7mph</div>
-                    <div>Wind</div>
+                    <div>1014hPa</div>
+                    <div>Pressure</div>
                 </div>
                 <div>
-                    <div>0%</div>
-                    <div>Rain</div>
+                    <div>69%</div>
+                    <div>Humidity</div>
                 </div>
             </div>
             <div>
