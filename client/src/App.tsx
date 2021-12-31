@@ -12,9 +12,11 @@ import CurrentWeatherStats from './components/CurrentWeatherStats';
 const App = () => {
 
     useEffect(() => {
-        axios.get('http://localhost:3000/weather/Auckland,nz').then((response) => {
-            console.log(response);
-        });
+        const fetchWeatherData = async () => {
+            const response = await axios.get('http://localhost:3000/weather/Auckland,nz');
+            console.log('response', response);
+        };
+        fetchWeatherData();
     }, []);
 
     return (
