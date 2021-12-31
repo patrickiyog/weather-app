@@ -14,21 +14,16 @@ const App = () => {
     useEffect(() => {
         const fetchWeatherData = async () => {
             const response = await axios.get('http://localhost:3000/weather/Auckland,nz');
-            console.log('response', response);
         };
         fetchWeatherData();
     }, []);
 
     return (
         <div>
-            <div>
-                <Location />
-                <Date />
-            </div>
-            <div>
-                <CurrentWeather />
-                <CurrentWeatherStats />
-            </div>
+            <Location />
+            <Date />
+            <CurrentWeather />
+            <CurrentWeatherStats />
         </div>
     );
 };
