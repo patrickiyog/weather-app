@@ -1,35 +1,50 @@
 import React from 'react';
 
+// Third Party Imports
+import { format, addSeconds } from 'date-fns';
+
+// Project Imports
+import { useWeatherStore } from '../WeatherStore';
+
 const CurrentWeatherStats = () => {
+
+    const weatherStats = useWeatherStore(state => state.weather.stats);
+
+    const createTimeFromSeconds = (timeInSeconds: number) => {
+        console.log('timeInSeconds', timeInSeconds);
+        const helperDate = addSeconds(new Date(0), timeInSeconds);
+        return format(helperDate, 'hh:mm aaa');
+    }
+
     return (
         <div>
             <div>
                 <div>
-                    <div>23&deg;C</div>
+                    <div>{weatherStats.temp_max}&deg;C</div>
                     <div>High</div>
                 </div>
                 <div>
-                    <div>14&deg;C</div>
+                    <div>{weatherStats.temp_min}&deg;C</div>
                     <div>Low</div>
                 </div>
             </div>
             <div>
                 <div>
-                    <div>1014hPa</div>
+                    <div>{weatherStats.pressure}hPa</div>
                     <div>Pressure</div>
                 </div>
                 <div>
-                    <div>69%</div>
+                    <div>{weatherStats.humidity}%</div>
                     <div>Humidity</div>
                 </div>
             </div>
             <div>
                 <div>
-                    <div>05:27</div>
+                    <div>{createTimeFromSeconds(weatherStats.sunrise)}</div>
                     <div>Sunrise</div>
                 </div>
                 <div>
-                    <div>20:57</div>
+                    <div>{createTimeFromSeconds(weatherStats.sunset)}</div>
                     <div>Sunset</div>
                 </div>
             </div>

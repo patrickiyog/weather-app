@@ -8,12 +8,21 @@ type WeatherState = {
     changeWeather: (weather: Weather) => void;
 };
 
-export const useWeatherStore = create<WeatherState>((set: SetState<WeatherState>) => ({
+export const useWeatherStore = create<WeatherState>(set => ({
     weather: {
         country: '',
         city: '',
         weather: {},
-        stats: {},
+        stats: {
+            temp: 0,
+            feels_like: 0,
+            temp_min: 0,
+            temp_max: 0,
+            pressure: 0,
+            humidity: 0,
+            sunrise: 0,
+            sunset: 0
+        },
     },
     changeWeather: (weather: Weather) => {
         set(() => ({ weather: weather }));
