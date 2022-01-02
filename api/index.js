@@ -9,20 +9,20 @@ const weather = require('./weather');
 
 app.use(express.json());
 
+// Add security to who can use these requests
 const whiteList = ['http://localhost', 'http://localhost:3000', 'http://localhost:3001']; // For production, use URL in the whitelist
 const corsOptions = {
     origin: (origin, callback) => {
-        console.log('origin', origin);
         if(!origin || whiteList.indexOf(origin) !== -1) {
             callback(null, true);
         } else {
             callback(new Error('Not allowed by CORS'));
         }
     },
-    optionsSuccessStatus: 200
+    optionsSuccessStatus: 200 // 200 = OK
 };
 
-app.use(cors(corsOptions));
+app.use(cors(corsOptions)); // Applying whitelist to CORS
 
 // Limit one request per second
 const limiter = rateLimit({
