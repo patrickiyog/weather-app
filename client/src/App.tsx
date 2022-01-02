@@ -6,7 +6,7 @@ import axios from 'axios';
 // Project Imports
 import { useWeatherStore } from './WeatherStore';
 import Location from './components/Location';
-import Date from './components/Date';
+import Today from './components/Today';
 import CurrentWeather from './components/CurrentWeather';
 import CurrentWeatherStats from './components/CurrentWeatherStats';
 import getErrorMessage from './util/getErrorMessage';
@@ -28,7 +28,7 @@ const App = () => {
     return (
         <div>
             <Location />
-            <Date />
+            <Today />
             <CurrentWeather />
             <CurrentWeatherStats />
         </div>
