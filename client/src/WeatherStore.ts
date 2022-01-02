@@ -1,14 +1,14 @@
-import create from "zustand/react";
+import create, { SetState } from 'zustand';
 
 // Project Imports
-import { Weather } from "./models/Weather";
+import { Weather } from './models/Weather';
 
-interface WeatherState {
+type WeatherState = {
     weather: Weather;
     changeWeather: (weather: Weather) => void;
 };
 
-export const weatherStore = create<WeatherState>(set => ({
+export const useWeatherStore = create<WeatherState>((set: SetState<WeatherState>) => ({
     weather: {
         country: '',
         city: '',

@@ -4,7 +4,7 @@ import React, { ErrorInfo, useEffect } from 'react';
 import axios from 'axios';
 
 // Project Imports
-import { weatherStore } from './WeatherStore';
+import { useWeatherStore } from './WeatherStore';
 import Location from './components/Location';
 import Date from './components/Date';
 import CurrentWeather from './components/CurrentWeather';
@@ -17,7 +17,7 @@ const App = () => {
         const fetchWeatherData = async () => {
             try {
                 const weatherData = await axios.get('http://localhost:3000/weather/Auckland,nz');
-                weatherStore.setState({ weather: weatherData.data });
+                useWeatherStore.setState({ weather: weatherData.data });
             } catch (error) {
                 console.log(getErrorMessage(error));
             };
