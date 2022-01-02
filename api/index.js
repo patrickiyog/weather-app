@@ -9,9 +9,10 @@ const weather = require('./weather');
 
 app.use(express.json());
 
-const whiteList = ['http://127.0.0.1', 'http://127.0.0.1:3000']; // For production, use URL in the whitelist
+const whiteList = ['http://localhost', 'http://localhost:3000', 'http://localhost:3001']; // For production, use URL in the whitelist
 const corsOptions = {
     origin: (origin, callback) => {
+        console.log('origin', origin);
         if(!origin || whiteList.indexOf(origin) !== -1) {
             callback(null, true);
         } else {
