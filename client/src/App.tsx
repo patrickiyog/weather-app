@@ -30,6 +30,7 @@ const App = () => {
     }, []);
 
     // https://stackoverflow.com/questions/63192407/waiting-for-async-function-in-react-component-showing-spinner
+    // https://github.com/mhnpd/react-loader-spinner/tree/9079a1cd19b69719990242ca76874d19864a4008
     if (loading) {
         return (
             <Loader
