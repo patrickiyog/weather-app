@@ -11,7 +11,6 @@ const CurrentWeatherStats = () => {
     const weatherStats = useWeatherStore(state => state.weather.stats);
 
     const createTimeFromSeconds = (timeInSeconds: number) => {
-        console.log('timeInSeconds', timeInSeconds);
         const helperDate = addSeconds(new Date(0), timeInSeconds);
         return format(helperDate, 'hh:mm aaa');
     }
