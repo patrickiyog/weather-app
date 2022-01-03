@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 // Third Party Imports
 import axios from 'axios';
+import Loader from 'react-loader-spinner';
 
 // Project Imports
 import { useWeatherStore } from './WeatherStore';
@@ -30,7 +31,14 @@ const App = () => {
 
     // https://stackoverflow.com/questions/63192407/waiting-for-async-function-in-react-component-showing-spinner
     if (loading) {
-        return <span>Loading</span>;
+        return (
+            <Loader
+                type="Oval"
+                color="#00BFFF"
+                height={100}
+                width={100}
+            />
+        );
     };
 
     return (
