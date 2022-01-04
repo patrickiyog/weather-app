@@ -12,14 +12,20 @@ export const useWeatherStore = create<WeatherState>(set => ({
     weather: {
         country: '',
         city: '',
-        weather: {},
+        weather: {
+            main: '',
+            description: '',
+            icon: '',
+            temperature: 0,
+            feels_like: 0
+        },
         stats: {
-            temp: 0,
-            feels_like: 0,
             temp_min: 0,
             temp_max: 0,
             pressure: 0,
             humidity: 0,
+            windspeed: 0,
+            windDirection: '',
             sunrise: 0,
             sunset: 0
         },

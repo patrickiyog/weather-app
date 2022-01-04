@@ -1,14 +1,20 @@
 export interface Weather {
     country: string;
     city: string;
-    weather: object;
-    stats: {
-        temp: number;
+    weather: {
+        main: string;
+        description: string;
+        icon: string;
+        temperature: number;
         feels_like: number;
+    };
+    stats: {
         temp_min: number;
         temp_max: number;
         pressure: number;
         humidity: number;
+        windspeed: number;
+        windDirection: string;
         sunrise: number;
         sunset: number;
     };
