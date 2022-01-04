@@ -6,8 +6,7 @@ import Loader from 'react-loader-spinner';
 
 // Project Imports
 import { useWeatherStore } from './WeatherStore';
-import Location from './components/Location';
-import Today from './components/Today';
+import DateAndLocation from './components/DateAndLocation';
 import CurrentWeather from './components/CurrentWeather';
 import CurrentWeatherStats from './components/CurrentWeatherStats';
 import getErrorMessage from './util/getErrorMessage';
@@ -44,8 +43,7 @@ const App = () => {
 
     return (
         <div>
-            <Location />
-            <Today />
+            <DateAndLocation />
             <CurrentWeather />
             <CurrentWeatherStats />
         </div>
