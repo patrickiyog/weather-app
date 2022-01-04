@@ -9,12 +9,17 @@ const toCompassDirection = (degrees) => {
 };
 
 const organiseWeatherStream = (weatherStream) => {
+  const { temp, feels_like, ...remainingWeatherStrean } = weatherStream.main; // rest syntax: https://ultimatecourses.com/blog/remove-object-properties-destructuring
   return {
     country: weatherStream.sys.country,
     city: weatherStream.name,
-    weather: weatherStream.weather[0], // weatherStream.weather is fetched as an array of objects, hence, first and only element is taken out to make weather an object type
+    main: {
+      ...weatherStream.weather[0], // weatherStream.weather is fetched as an array of objects, hence, first and only element is taken out to make weather an object type
+      temperature: weatherStream.main.temp,
+      feels_like: weatherStream.main.feels_like,
+    },
     stats: {
-      ...weatherStream.main,
+      ...remainingWeatherStrean,
       windspeed: weatherStream.wind.speed * 3.6, // convert m/s to km/h (1 m/s to km/h = 3.6 km/h )
       windDirection: toCompassDirection(weatherStream.wind.deg),
       sunrise: weatherStream.sys.sunrise,
