@@ -5,6 +5,7 @@ import axios from 'axios';
 import Loader from 'react-loader-spinner';
 
 // Project Imports
+import './App.css';
 import { useWeatherStore } from './WeatherStore';
 import DateAndLocation from './components/DateAndLocation';
 import CurrentWeather from './components/CurrentWeather';
@@ -42,7 +43,7 @@ const App = () => {
     };
 
     return (
-        <div>
+        <div className="App">
             <DateAndLocation />
             <CurrentWeather />
             <CurrentWeatherStats />
