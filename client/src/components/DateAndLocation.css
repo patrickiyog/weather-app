@@ -1,0 +1,13 @@
+.date-and-location {
+  text-align: center;
+}
+
+.date {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  margin-bottom: 5px;
+}
+
+.location {
+  margin-top: 5px;
+}

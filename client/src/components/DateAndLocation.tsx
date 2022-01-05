@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { format } from 'date-fns';
 
 // Project Imports
+import './DateAndLocation.css';
 import { useWeatherStore } from '../WeatherStore';
 
 const DateAndLocation = () => {
@@ -12,12 +13,12 @@ const DateAndLocation = () => {
     const country = useWeatherStore(state => state.weather.country);
 
     return (
-        <div>
-            <h2>{format(new Date(), 'eeee, d MMMM yyyy')}</h2>
-            <h1>{`${city}, ${country.toUpperCase()}`}</h1>
+        <div className="date-and-location">
+            <h2 className="date">{format(new Date(), 'eeee, d MMMM yyyy')}</h2>
+            <h1 className="location">{`${city}, ${country.toUpperCase()}`}</h1>
         </div>
     );
-    
+
 };
 
 export default DateAndLocation;
