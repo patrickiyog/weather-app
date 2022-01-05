@@ -9,8 +9,8 @@ import { useWeatherStore } from '../WeatherStore';
 
 const DateAndLocation = () => {
 
-    const city = useWeatherStore(state => state.weather.city);
-    const country = useWeatherStore(state => state.weather.country);
+    const city = useWeatherStore(state => state.data.city);
+    const country = useWeatherStore(state => state.data.country);
 
     return (
         <div className="date-and-location">

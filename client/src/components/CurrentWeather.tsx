@@ -8,12 +8,12 @@ import { useWeatherStore } from '../WeatherStore';
 
 const CurrentWeather = () => {
 
-    const weatherStats = useWeatherStore(state => state.weather.stats);
+    const icon = useWeatherStore(state => state.data.main.icon);
 
     return (
         <div>
             <div>
-                <Icon icon="wi:day-sunny" width="150px" height="150px" />
+                <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
             </div>
             <div>
                 <div>

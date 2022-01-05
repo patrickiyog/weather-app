@@ -1,7 +1,8 @@
 export interface Weather {
     country: string;
     city: string;
-    weather: {
+    main: {
+        id: number;
         main: string;
         description: string;
         icon: string;

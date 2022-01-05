@@ -4,15 +4,16 @@ import create, { SetState } from 'zustand';
 import { Weather } from './models/Weather';
 
 type WeatherState = {
-    weather: Weather;
+    data: Weather;
     changeWeather: (weather: Weather) => void;
 };
 
 export const useWeatherStore = create<WeatherState>(set => ({
-    weather: {
+    data: {
         country: '',
         city: '',
-        weather: {
+        main: {
+            id: 0,
             main: '',
             description: '',
             icon: '',
@@ -31,6 +32,6 @@ export const useWeatherStore = create<WeatherState>(set => ({
         },
     },
     changeWeather: (weather: Weather) => {
-        set(() => ({ weather: weather }));
+        set(() => ({ data: weather }));
     }
 }));

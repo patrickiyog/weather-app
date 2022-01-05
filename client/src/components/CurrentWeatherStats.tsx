@@ -8,7 +8,7 @@ import { useWeatherStore } from '../WeatherStore';
 
 const CurrentWeatherStats = () => {
 
-    const weatherStats = useWeatherStore(state => state.weather.stats);
+    const weatherStats = useWeatherStore(state => state.data.stats);
 
     const createTimeFromSeconds = (timeInSeconds: number) => {
         const helperDate = addSeconds(new Date(0), timeInSeconds);
