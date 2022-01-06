@@ -1,13 +1,19 @@
 const WEATHER_ICONS: Record<string, string> = {
-    CLEAR_SKY: 'bi:sun',
-    FEW_CLOUDS: 'bi:cloud-sun',
-    SCATTERED_CLOUDS: 'bi:cloud',
-    BROKEN_CLOUDS: 'bi:cloud',
-    SHOWER_RAIN: 'bi:cloud-rain',
-    RAIN: 'fluent:weather-rain-showers-day-24-regular',
-    THUNDERSTORM: 'fluent:weather-thunderstorm-48-filled',
-    SNOW: 'fluent:weather-snow-20-regular',
-    MIST: 'mi:fog',
+    CLEAR: 'bi:sun',
+    CLOUDS: 'bi:cloud',
+    DRIZZLE: 'bi:cloud-drizzle',
+    RAIN: 'bi:cloud-rain',
+    THUNDERSTORM: 'bi:cloud-lightning-rain',
+    SNOW: 'bi:cloud-snow',
+    MIST: 'bi:cloud',
+    SMOKE: 'bi:cloud',
+    HAZE: 'bi:cloud',
+    DUST: 'bi:cloud',
+    FOG: 'bi:cloud',
+    SAND: 'bi:cloud',
+    ASH: 'bi:cloud',
+    SQUALL: 'bi:cloud',
+    TORNADO: 'bi:cloud',
 };
 
 const isValidWeatherType = (weatherType: string) => {
